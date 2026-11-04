@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Logo circular */
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5b0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+}
+
+.logo-text {
+    font-size: 60px;
+}
+
+.logo h1 {
+    color: #d4af37;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.subtitle {
+    color: #b0b0b0;
+    font-size: 1.1em;
+}
+
+/* Tarjeta del formulario */
+.card {
+    background: rgba(45, 45, 45, 0.8);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-size: 1.8em;
+}
+
+.hint {
+    color: #909090;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 2px solid #404040;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #d4af37;
+}
+
+input::placeholder {
+    color: #606060;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5b0 100%);
+    border: none;
+    border-radius: 8px;
+    color: #1a1a1a;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Resultados */
+.resultados {
+    display: grid;
+    gap: 20px;
+}
+
+.trago-card {
+    background: rgba(45, 45, 45, 0.8);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.trago-card h3 {
+    color: #d4af37;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.trago-info {
+    margin-bottom: 10px;
+}
+
+.trago-info strong {
+    color: #d4af37;
+}
+
+.trago-info p {
+    color: #b0b0b0;
+    margin-top: 5px;
+}
+
+.coincidencias {
+    background: rgba(212, 175, 55, 0.2);
+    border: 1px solid #d4af37;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    color: #d4af37;
+    font-weight: bold;
+}
+
+.mensaje-error {
+    background: rgba(255, 100, 100, 0.2);
+    border: 2px solid #ff6464;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    color: #ff6464;
+}
+
+.mensaje-vacio {
+    background: rgba(100, 100, 100, 0.2);
+    border: 2px solid #606060;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    color: #909090;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px;
+    background: #2d2d2d;
+    border: 2px solid #404040;
+    border-radius: 8px;
+    color: #909090;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    border-color: #d4af37;
+    color: #d4af37;
+}
+
+.tab.active {
+    background: linear-gradient(135deg, #d4af37 0%, #f4e5b0 100%);
+    border-color: #d4af37;
+    color: #1a1a1a;
+    font-weight: bold;
+}
+
+/* Búsquedas */
+.busqueda-activa {
+    display: block;
+}
+
+.busqueda-inactiva {
+    display: none;
+}
+
+/* Estilos para la imagen del trago */
+.trago-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #d4af37;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Estilos para el formulario de Admin */
+textarea {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a1a;
+    border: 2px solid #404040;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 1em;
+    margin-bottom: 20px;
+    font-family: inherit;
+    resize: vertical;
+}
+textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Barman Digital</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <div class="logo-circle"><span class="logo-text">🍸</span></div>
+            <h1>El Barman Digital</h1>
+            <p class="subtitle">Descubrí, creá y gestioná tus tragos</p>
+        </div>
+
+        <div class="card">
+            <div class="tabs">
+                <button class="tab active" onclick="cambiarTab('nombre')">🔍 Por Nombre</button>
+                <button class="tab" onclick="cambiarTab('ingredientes')">🍋 Por Ingredientes</button>
+                <button class="tab" onclick="cambiarTab('admin')">🛠️ Administrar</button>
+            </div>
+            
+            <div id="busqueda-nombre" class="busqueda-activa">
+                <p class="hint">Buscá un trago específico</p>
+                <input type="text" id="nombre-trago" placeholder="Ej: Martini, Mojito...">
+                <button onclick="buscarPorNombre()">Buscar Trago</button>
+            </div>
+            
+            <div id="busqueda-ingredientes" class="busqueda-inactiva">
+                <p class="hint">Separá los ingredientes con comas</p>
+                <input type="text" id="ingredientes" placeholder="Ej: Ron, Menta, Azúcar, Lima">
+                <button onclick="buscarTragos()">Buscar por Ingredientes</button>
+            </div>
+
+            <div id="busqueda-admin" class="busqueda-inactiva">
+                <p class="hint">Agregá un nuevo trago a la base de datos</p>
+                <input type="text" id="admin-nombre" placeholder="Nombre del trago">
+                <input type="text" id="admin-vaso" placeholder="Vaso (Ej: Vaso Alto)">
+                <input type="text" id="admin-ingredientes" placeholder="Ingredientes (separados por coma)">
+                <textarea id="admin-preparacion" placeholder="Preparación paso a paso" rows="3"></textarea>
+                <textarea id="admin-historia" placeholder="Historia o tipo (Ej: Alcohólico)" rows="2"></textarea>
+                <input type="text" id="admin-imagen" placeholder="URL de la imagen (opcional)">
+                <input type="hidden" id="admin-id"> <!-- Para saber si editamos -->
+                <button onclick="guardarTrago()" id="btn-guardar">💾 Guardar Trago</button>
+                <button onclick="limpiarFormulario()" style="background: #404040; margin-top: 10px;">Limpiar Formulario</button>
+            </div>
+        </div>
+
+        <div id="resultados" class="resultados"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
